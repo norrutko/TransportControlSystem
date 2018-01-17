@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="coreapi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/coreapi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/corba_sun.jar!/" />
+      <root url="jar://$PROJECT_DIR$/utilityapi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/testapi.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$" recursive="false" />
+  </library>
+</component>
