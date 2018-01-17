@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/parlayTemplate.iml" filepath="$PROJECT_DIR$/parlayTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sampleWAIP.iml" filepath="$PROJECT_DIR$/sampleWAIP.iml" />
     </modules>
   </component>
 </project>

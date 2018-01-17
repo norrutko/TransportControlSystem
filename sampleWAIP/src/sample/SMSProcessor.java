@@ -35,7 +35,10 @@ import java.util.*;
 public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosaUIManager {
     private IpHosaUIManager itsHosaUIManager;
     private Sample parent;
-
+    private Multimap<String,String> substribers;
+    private Map<String,Double> subsribersFuels;
+    private TimerTask notifySubscribers;
+    private final int subscriptionInterval = 5000;
     /**
      * @param aHosaUIManager
      * menadŜer słuŜacy do komunikacji z Ericsson Network Resource Gateway
@@ -46,7 +49,23 @@ public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosa
     public SMSProcessor(IpHosaUIManager aHosaUIManager, Sample aParent) {
         itsHosaUIManager = aHosaUIManager;
         this.parent = parent;
+        this.substribers = HashMultimap.create();
+        this.subsribersFuels = new HashMap<String, Double>();
+        notifySubscribers = new TimerTask() {
+            @Override
+            public void run() {
+                for (String receiver : substribers.get("2222")) {
+                    double rand = new Random().nextDouble();
+                    subsribersFuels.put(receiver, subsribersFuels.get(receiver) - rand);
+                    sendSMS("2222", receiver, "Wiadomosc do subskrybenta " + receiver
+                            + ": stan paliwa: " + subsribersFuels.get(receiver) + " litry.");
+                }
+            }
+        };
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(notifySubscribers, 0, subscriptionInterval);
     }
+
     /**
      * Funkcja dodaje nasłuch przychodzacych wiadomości dla podanego numeru
      * (użytkownik o tym numerze nie musi istnieć, może to być numer usługi)
@@ -85,7 +104,7 @@ public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosa
      * Usunięcie notyfikacji
      * @param anAssignmentId
      * ID notyfikacji do usunięcia (zwróceone przez
-     * @see messaging.MMSProcessor#startNotifications(String)
+     * @see //messaging.MMSProcessor#startNotifications(String)
     startNotifications )
      */
     public void stopNotifications(int anAssignmentId) {
@@ -123,10 +142,52 @@ public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosa
         String receiver = anEventInfo.DestinationAddress.AddrString;
         String messageContent = anEventInfo.DataString;
 
-        //odesłanie wiadomości ,,Witaj świecie'' do nadawcy
+
+        /*//odesłanie wiadomości ,,Witaj świecie'' do nadawcy
         this.sendSMS(receiver, sender, "Witaj swiecie");
+        return null;*/
+
+        subscribersManagment(sender,receiver,messageContent);
         return null;
     }
+
+    public void subscribersManagment(String sender, String receiver, String messageContent) {
+        String reply = "";
+        if (receiver.equals("1111")) {
+            if (messageContent.equals("start")) {
+                reply = "Dodano pojazd do floty";
+                substribers.put(receiver, sender);
+            }
+            else if (messageContent.equals("stop")) {
+                reply = "Usunieto pojazd z floty";
+                substribers.remove("2222",sender);
+            }
+        }
+        else if (receiver.equals("2222")) {
+            if (messageContent.equals("start") && substribers.get("1111").contains(sender)) {
+                reply = "Raporty na temat stanu paliwa beda otrzymywane raz na " + subscriptionInterval/1000 + " sekund";
+                Random r = new Random();
+                int minFuel = 500;
+                int maxFuel = 1200;
+                double rand = new Random().nextDouble();
+                subsribersFuels.put(sender,minFuel+rand*(maxFuel-minFuel));
+            }
+            else if (messageContent.equals("stop") && substribers.get("2222").contains(sender)) {
+                reply = "Raporty na temat stanu paliwa zostaly anulowane.";
+                subsribersFuels.remove(sender);
+            }
+        }
+        if (!reply.equals("")) {
+            if (messageContent.equals("start")) {
+                substribers.put(receiver, sender);
+            }
+            else if (messageContent.equals("stop")) {
+                substribers.remove(receiver,sender);
+            }
+            this.sendSMS(receiver,sender,reply);
+        }
+    }
+
     /**
      * Wysłanie SMSa
      *

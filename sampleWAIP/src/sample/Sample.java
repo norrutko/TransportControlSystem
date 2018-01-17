@@ -40,6 +40,7 @@ public class Sample {
                     e);
         }
         smsProcessor = new SMSProcessor(itsHosaUIManager, this);
+        smsProcessor.startNotifications("1111");
         smsProcessor.startNotifications("2222");
         theGUI.addText("Aplikacja połączona");
     }
