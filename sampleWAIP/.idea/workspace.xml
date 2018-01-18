@@ -15,8 +15,8 @@
       <file leaf-file-name="Sample.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Sample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="28" column="57" lean-forward="true" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+            <state relative-caret-position="323">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,50 +27,58 @@
       <file leaf-file-name="SMSProcessor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/SMSProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+            <state relative-caret-position="-306">
+              <caret line="134" column="7" lean-forward="false" selection-start-line="134" selection-start-column="7" selection-end-line="134" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2301#2810#0" expanded="true" />
-                <element signature="e#2809#2810#0" expanded="true" />
-                <element signature="e#4845#4846#0" expanded="true" />
-                <element signature="e#4913#4914#0" expanded="true" />
+                <element signature="e#2195#2700#0" expanded="true" />
+                <element signature="e#2699#2700#0" expanded="true" />
+                <element signature="e#4735#4736#0" expanded="true" />
+                <element signature="e#4803#4804#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FWproxy.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/utilityapi.jar!/com/ericsson/hosasdk/utility/framework/FWproxy.class">
+      <file leaf-file-name="IpAppHosaUIManagerImpl.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/coreapi.jar!/com/ericsson/hosasdk/impl/hui/IpAppHosaUIManagerImpl.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+            <state relative-caret-position="3621">
+              <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
               <folding>
                 <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1512819998000" expanded="false" signature="162:917" ph="..." />
-                <marker date="1512819998000" expanded="true" signature="1213:1220" ph="{}" />
-                <marker date="1512819998000" expanded="true" signature="1260:1818" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="1550:1810" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="1676:1800" ph="{...}" />
-                <marker date="1512819998000" expanded="false" signature="1899:1910" ph=" { " />
-                <marker date="1512819998000" expanded="false" signature="1939:1945" ph=" }" />
-                <marker date="1512819998000" expanded="true" signature="2064:2645" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="2715:2805" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="2855:2971" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="3054:3155" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="3271:4812" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="4866:5079" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="5175:5407" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="5470:5689" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="5734:6142" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="6205:6424" ph="{...}" />
-                <marker date="1512819998000" expanded="false" signature="6453:6464" ph=" { " />
-                <marker date="1512819998000" expanded="false" signature="6499:6505" ph=" }" />
-                <marker date="1512819998000" expanded="true" signature="6533:6808" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="6877:7838" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="7124:7280" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="7331:7776" ph="{...}" />
-                <marker date="1512819998000" expanded="true" signature="7821:7832" ph="{}" />
+                <marker date="1512819998000" expanded="false" signature="153:1249" ph="..." />
+                <marker date="1512819998000" expanded="false" signature="1428:1439" ph=" { " />
+                <marker date="1512819998000" expanded="false" signature="1464:1470" ph=" }" />
+                <marker date="1512819998000" expanded="true" signature="1508:1515" ph="{}" />
+                <marker date="1512819998000" expanded="true" signature="1610:3023" ph="{...}" />
+                <marker date="1512819998000" expanded="true" signature="3114:4507" ph="{...}" />
+                <marker date="1512819998000" expanded="true" signature="4662:6342" ph="{...}" />
+                <marker date="1512819998000" expanded="true" signature="6415:7745" ph="{...}" />
+                <marker date="1512819998000" expanded="true" signature="7860:9589" ph="{...}" />
+                <marker date="1512819998000" expanded="true" signature="9648:10858" ph="{...}" />
+                <marker date="1512819998000" expanded="true" signature="10915:12117" ph="{...}" />
+                <marker date="1512819998000" expanded="true" signature="12261:14106" ph="{...}" />
+                <marker date="1512819998000" expanded="true" signature="14134:14326" ph="{...}" />
+                <marker date="1512819998000" expanded="false" signature="14356:14367" ph=" { " />
+                <marker date="1512819998000" expanded="false" signature="14438:14444" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Subscriber.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Subscriber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+              <folding>
+                <element signature="e#384#385#0" expanded="true" />
+                <element signature="e#413#414#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#511#512#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,8 +87,8 @@
       <file leaf-file-name="RedundantFWProxy.class" pinned="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/coreapi.jar!/com/ericsson/hosasdk/impl/framework/RedundantFWProxy.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663">
-              <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+            <state relative-caret-position="255">
+              <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
               <folding>
                 <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
                 <marker date="1512819998000" expanded="false" signature="159:678" ph="..." />
@@ -103,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/ini/nrg.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -112,7 +120,7 @@
       <file leaf-file-name="_NamingContextStub.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.6.0_01/src.zip!/org/omg/CosNaming/_NamingContextStub.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
+            <state relative-caret-position="4131">
               <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
               <folding />
             </state>
@@ -122,8 +130,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            <state relative-caret-position="340">
+              <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding>
                 <element signature="e#508#509#0" expanded="true" />
                 <element signature="e#547#548#0" expanded="true" />
@@ -135,7 +143,7 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
+            <state relative-caret-position="272">
               <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
@@ -205,10 +213,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,14 +247,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/TransportControlSystem/sampleWAIP" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -466,42 +474,26 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/sample/SMSProcessor.java</url>
-          <line>236</line>
-          <properties class="sample.SMSProcessor" method="hosaSendMessageErr">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="58" />
+      <option name="time" value="68" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((DefaultServiceSelector)((IpHosaUIManagerImpl)itsHosaUIManager).selector).itsSCFName" custom="com.ericsson.hosasdk.utility.framework.FWproxy.DefaultServiceSelector,com.ericsson.hosasdk.impl.hui.IpHosaUIManagerImpl" />
+        <watch expression="substribers" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="52" column="1" lean-forward="false" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SMSProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2301#2810#0" expanded="true" />
-            <element signature="e#2809#2810#0" expanded="true" />
-            <element signature="e#4845#4846#0" expanded="true" />
-            <element signature="e#4913#4914#0" expanded="true" />
+            <element signature="e#2195#2700#0" expanded="true" />
+            <element signature="e#2699#2700#0" expanded="true" />
+            <element signature="e#4735#4736#0" expanded="true" />
+            <element signature="e#4803#4804#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -590,10 +582,10 @@
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2301#2810#0" expanded="true" />
-            <element signature="e#2809#2810#0" expanded="true" />
-            <element signature="e#4845#4846#0" expanded="true" />
-            <element signature="e#4913#4914#0" expanded="true" />
+            <element signature="e#2195#2700#0" expanded="true" />
+            <element signature="e#2699#2700#0" expanded="true" />
+            <element signature="e#4735#4736#0" expanded="true" />
+            <element signature="e#4803#4804#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -656,10 +648,10 @@
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2301#2810#0" expanded="true" />
-            <element signature="e#2809#2810#0" expanded="true" />
-            <element signature="e#4845#4846#0" expanded="true" />
-            <element signature="e#4913#4914#0" expanded="true" />
+            <element signature="e#2195#2700#0" expanded="true" />
+            <element signature="e#2699#2700#0" expanded="true" />
+            <element signature="e#4735#4736#0" expanded="true" />
+            <element signature="e#4803#4804#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -702,13 +694,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Multimao.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Multimap.java" />
-    <entry file="jar://$PROJECT_DIR$/coreapi.jar!/com/ericsson/hosasdk/impl/hui/IpAppHosaUIManagerImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3366">
-          <caret line="224" column="0" lean-forward="false" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Map.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Configuration.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.6.0_01/src.zip!/javax/swing/JFrame.java">
@@ -757,11 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1512819998000" expanded="true" signature="261:268" ph="{}" />
-            <marker date="1512819998000" expanded="true" signature="335:4623" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -769,12 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1512819998000" expanded="false" signature="148:225" ph="..." />
-            <marker date="1512819998000" expanded="true" signature="352:1649" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="1701:1957" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -782,33 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3281">
           <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
-          <folding>
-            <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1512819998000" expanded="false" signature="159:2492" ph="..." />
-            <marker date="1512819998000" expanded="true" signature="3462:5974" ph="{...}" />
-            <marker date="1512819998000" expanded="false" signature="6055:6066" ph=" { " />
-            <marker date="1512819998000" expanded="false" signature="6095:6101" ph=" }" />
-            <marker date="1512819998000" expanded="true" signature="6206:6834" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="6910:7233" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="7301:7736" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="7790:8077" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="8173:8479" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="8542:8835" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="8876:9121" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="9158:9402" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="9440:9981" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="10016:10662" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="10703:13855" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="13891:14018" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="14061:14659" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="14258:14490" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="14379:14472" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="14705:14943" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="14989:16026" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="16144:16357" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="16456:16870" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="16926:19377" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,20 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
           <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding>
-            <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1512819998000" expanded="false" signature="148:701" ph="..." />
-            <marker date="1512819998000" expanded="true" signature="1151:2013" ph="{...}" />
-            <marker date="1512819998000" expanded="false" signature="2090:2101" ph=" { " />
-            <marker date="1512819998000" expanded="false" signature="2134:2140" ph=" }" />
-            <marker date="1512819998000" expanded="true" signature="2204:3648" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="3676:3995" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="4044:4142" ph="{...}" />
-            <marker date="1512819998000" expanded="false" signature="4167:4178" ph=" { " />
-            <marker date="1512819998000" expanded="false" signature="4197:4203" ph=" }" />
-            <marker date="1512819998000" expanded="true" signature="4261:4932" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="4945:5873" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -837,58 +770,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1512819998000" expanded="false" signature="148:469" ph="..." />
-            <marker date="1512819998000" expanded="true" signature="836:843" ph="{}" />
-            <marker date="1512819998000" expanded="true" signature="925:1194" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="1262:3941" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="4000:5753" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="4211:4310" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="4343:4626" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="4654:5747" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/utilityapi.jar!/com/ericsson/hosasdk/utility/framework/FWproxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="289">
           <caret line="36" column="22" lean-forward="false" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-          <folding>
-            <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1512819998000" expanded="false" signature="162:917" ph="..." />
-            <marker date="1512819998000" expanded="true" signature="1213:1220" ph="{}" />
-            <marker date="1512819998000" expanded="true" signature="1260:1818" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="1550:1810" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="1676:1800" ph="{...}" />
-            <marker date="1512819998000" expanded="false" signature="1899:1910" ph=" { " />
-            <marker date="1512819998000" expanded="false" signature="1939:1945" ph=" }" />
-            <marker date="1512819998000" expanded="true" signature="2064:2645" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="2715:2805" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="2855:2971" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="3054:3155" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="3271:4812" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="4866:5079" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="5175:5407" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="5470:5689" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="5734:6142" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="6205:6424" ph="{...}" />
-            <marker date="1512819998000" expanded="false" signature="6453:6464" ph=" { " />
-            <marker date="1512819998000" expanded="false" signature="6499:6505" ph=" }" />
-            <marker date="1512819998000" expanded="true" signature="6533:6808" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="6877:7838" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="7124:7280" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="7331:7776" ph="{...}" />
-            <marker date="1512819998000" expanded="true" signature="7821:7832" ph="{}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/coreapi.jar!/com/ericsson/hosasdk/impl/framework/RedundantFWProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="27" column="28" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        <state relative-caret-position="255">
+          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding>
             <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
             <marker date="1512819998000" expanded="false" signature="159:678" ph="..." />
@@ -906,17 +801,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.6.0_01/src.zip!/org/omg/CosNaming/_NamingContextStub.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
+        <state relative-caret-position="4131">
           <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
           <folding />
         </state>
@@ -925,15 +812,15 @@
     <entry file="file://$PROJECT_DIR$/ini/nrg.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state relative-caret-position="340">
+          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
           <folding>
             <element signature="e#508#509#0" expanded="true" />
             <element signature="e#547#548#0" expanded="true" />
@@ -941,12 +828,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Sample.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="57" lean-forward="true" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
+        <state relative-caret-position="272">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_01/src.zip!/com/sun/corba/se/impl/protocol/CorbaServerRequestDispatcherImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="636" column="0" lean-forward="false" selection-start-line="636" selection-start-column="0" selection-end-line="636" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/coreapi.jar!/com/ericsson/hosasdk/impl/hui/IpAppHosaUIManagerImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3621">
+          <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1512819998000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1512819998000" expanded="false" signature="153:1249" ph="..." />
+            <marker date="1512819998000" expanded="false" signature="1428:1439" ph=" { " />
+            <marker date="1512819998000" expanded="false" signature="1464:1470" ph=" }" />
+            <marker date="1512819998000" expanded="true" signature="1508:1515" ph="{}" />
+            <marker date="1512819998000" expanded="true" signature="1610:3023" ph="{...}" />
+            <marker date="1512819998000" expanded="true" signature="3114:4507" ph="{...}" />
+            <marker date="1512819998000" expanded="true" signature="4662:6342" ph="{...}" />
+            <marker date="1512819998000" expanded="true" signature="6415:7745" ph="{...}" />
+            <marker date="1512819998000" expanded="true" signature="7860:9589" ph="{...}" />
+            <marker date="1512819998000" expanded="true" signature="9648:10858" ph="{...}" />
+            <marker date="1512819998000" expanded="true" signature="10915:12117" ph="{...}" />
+            <marker date="1512819998000" expanded="true" signature="12261:14106" ph="{...}" />
+            <marker date="1512819998000" expanded="true" signature="14134:14326" ph="{...}" />
+            <marker date="1512819998000" expanded="false" signature="14356:14367" ph=" { " />
+            <marker date="1512819998000" expanded="false" signature="14438:14444" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -954,21 +871,38 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Subscriber.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Sample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SMSProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+        <state relative-caret-position="-306">
+          <caret line="134" column="7" lean-forward="false" selection-start-line="134" selection-start-column="7" selection-end-line="134" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2301#2810#0" expanded="true" />
-            <element signature="e#2809#2810#0" expanded="true" />
-            <element signature="e#4845#4846#0" expanded="true" />
-            <element signature="e#4913#4914#0" expanded="true" />
+            <element signature="e#2195#2700#0" expanded="true" />
+            <element signature="e#2699#2700#0" expanded="true" />
+            <element signature="e#4735#4736#0" expanded="true" />
+            <element signature="e#4803#4804#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -35,8 +35,7 @@ import java.util.*;
 public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosaUIManager {
     private IpHosaUIManager itsHosaUIManager;
     private Sample parent;
-    private Multimap<String,String> substribers;
-    private Map<String,Double> subsribersFuels;
+    private Multimap<String,Subscriber> substribers;
     private TimerTask notifySubscribers;
     private final int subscriptionInterval = 5000;
     /**
@@ -50,15 +49,14 @@ public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosa
         itsHosaUIManager = aHosaUIManager;
         this.parent = parent;
         this.substribers = HashMultimap.create();
-        this.subsribersFuels = new HashMap<String, Double>();
         notifySubscribers = new TimerTask() {
             @Override
             public void run() {
-                for (String receiver : substribers.get("2222")) {
+                for (Subscriber receiver : substribers.get("2222")) {
                     double rand = new Random().nextDouble();
-                    subsribersFuels.put(receiver, subsribersFuels.get(receiver) - rand);
-                    sendSMS("2222", receiver, "Wiadomosc do subskrybenta " + receiver
-                            + ": stan paliwa: " + subsribersFuels.get(receiver) + " litry.");
+                    receiver.setFuel(receiver.getFuel()-rand);
+                    sendSMS("2222", receiver.getNumber(), "Wiadomosc do subskrybenta " + receiver.getNumber()
+                            + ".Stan paliwa: " + receiver.getFuel() + " litry/litra.");
                 }
             }
         };
@@ -151,41 +149,52 @@ public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosa
         return null;
     }
 
+    //todo ogarnia obsluge wiadomosci kierowcow do bramek
     public void subscribersManagment(String sender, String receiver, String messageContent) {
         String reply = "";
-        if (receiver.equals("1111")) {
-            if (messageContent.equals("start")) {
-                reply = "Dodano pojazd do floty";
-                substribers.put(receiver, sender);
+        if (receiver.equals("1111")) { //todo kierowca wyslal sms na bramke 1111 odpowiedzialna za zarzadzanie flota
+            Subscriber subscriber = findSubsciber("1111",sender); //todo szukanie subskrypcji kierowcy na bramce 1111
+            //todo wejdzie jesli wiadomosc o tresci start i subskrypcji jeszcze nie ma
+            if (messageContent.equals("start") &&  subscriber==null) {
+                reply = "Dodano pojazd do floty.";
+                substribers.put(receiver, new Subscriber(sender)); //todo dodanie kierowcy do floty (subskrypcja na 1111)
             }
-            else if (messageContent.equals("stop")) {
-                reply = "Usunieto pojazd z floty";
-                substribers.remove("2222",sender);
+            //todo wejdzie jesli wiadomosc o tresci stop i subskrypcja istnieje
+            else if (messageContent.equals("stop") && subscriber!=null) {
+                reply = "Usunieto pojazd z floty.";
+                for (String g : substribers.keySet()) {
+                    substribers.remove(g,subscriber); //todo wywalenie kierowcy z floty (z subskrypcji na 1111)
+                }
             }
         }
-        else if (receiver.equals("2222")) {
-            if (messageContent.equals("start") && substribers.get("1111").contains(sender)) {
-                reply = "Raporty na temat stanu paliwa beda otrzymywane raz na " + subscriptionInterval/1000 + " sekund";
-                Random r = new Random();
-                int minFuel = 500;
-                int maxFuel = 1200;
-                double rand = new Random().nextDouble();
-                subsribersFuels.put(sender,minFuel+rand*(maxFuel-minFuel));
+        else if (receiver.equals("2222")) { //todo kierowca wyslal sms na bramke 2222 odpowiedzialna za okresowy raporty o paliwie
+            Subscriber fleetMember = findSubsciber("1111",sender); //todo szukanie subskrypcji kierowcy na bramce 1111
+            Subscriber fuelSubscriber = findSubsciber("2222",sender); //todo szukanie subskrypcji kierowcy na bramce 2222
+            //todo wejdzie jesli wiadomosc o tresci start, kierowca jest we flocie ale nie subskrybuje infa o paliwie
+            if (messageContent.equals("start") && fleetMember!=null && fuelSubscriber==null) {
+                reply = "Raporty na temat stanu paliwa beda otrzymywane raz na " + subscriptionInterval/1000 + " sekund.";
+                substribers.put(receiver, fleetMember); //todo dodanie kierowcy do subskrypcji infa o paliwie (na 2222)
             }
-            else if (messageContent.equals("stop") && substribers.get("2222").contains(sender)) {
+            //todo wejdzie jesli wiadomosci o tresci stop, kierowca subskrybuje info o paliwie. warunek o czlonkowstwie
+            //todo zbedny bo napewno jest we flocie
+            else if (messageContent.equals("stop") && fuelSubscriber!=null) {
                 reply = "Raporty na temat stanu paliwa zostaly anulowane.";
-                subsribersFuels.remove(sender);
+                substribers.remove(receiver,fuelSubscriber); //todo wywalanie kierowcy z subskrypcji o stanie paliwa
             }
         }
-        if (!reply.equals("")) {
-            if (messageContent.equals("start")) {
-                substribers.put(receiver, sender);
-            }
-            else if (messageContent.equals("stop")) {
-                substribers.remove(receiver,sender);
-            }
-            this.sendSMS(receiver,sender,reply);
+        if (!reply.equals("")) { //todo jesli przygotowalismy jakas wiadomosc zrotna
+            this.sendSMS(receiver,sender,reply); //todo wyslanie wiadomosci zwrotnej
         }
+    }
+
+    //todo szuka subskrypcji kierowcy o numerze "subscriber" na bramce "gate"
+    private Subscriber findSubsciber(String gate, String subscriber) {
+        for (Subscriber r : substribers.get(gate)) {
+            if (r.getNumber().equals(subscriber)) {
+                return r;
+            }
+        }
+        return null;
     }
 
     /**
