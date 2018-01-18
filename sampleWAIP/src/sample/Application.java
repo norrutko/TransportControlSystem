@@ -13,13 +13,13 @@ import com.ericsson.hosasdk.api.fw.P_UNKNOWN_SERVICE_TYPE;
 import com.ericsson.hosasdk.api.hui.IpHosaUIManager;
 import com.ericsson.hosasdk.api.mm.ul.IpUserLocation;
 import com.ericsson.hosasdk.utility.framework.FWproxy;
-public class Sample {
+public class Application {
     private FWproxy itsFramework;
     private IpHosaUIManager itsHosaUIManager;
     private IpUserLocation itsOsaULManager;
     public SMSProcessor smsProcessor;
     public GUI theGUI;
-    public Sample(GUI aGUI) {
+    public Application(GUI aGUI) {
         theGUI = aGUI;
         aGUI.setTitle("Monitoring floty samochodowej");
     }
@@ -41,6 +41,7 @@ public class Sample {
         }
         smsProcessor = new SMSProcessor(itsHosaUIManager, this);
         smsProcessor.startNotifications("1111");
+        smsProcessor.startNotifications("2221");
         smsProcessor.startNotifications("2222");
         theGUI.addText("Aplikacja połączona");
     }

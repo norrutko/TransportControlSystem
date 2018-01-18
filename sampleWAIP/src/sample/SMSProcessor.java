@@ -34,8 +34,8 @@ import java.util.*;
  */
 public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosaUIManager {
     private IpHosaUIManager itsHosaUIManager;
-    private Sample parent;
-    private Multimap<String,Subscriber> substribers;
+    private Application parent;
+    private Multimap<String,Subscriber> subsribers;
     private TimerTask notifySubscribers;
     private final int subscriptionInterval = 5000;
     /**
@@ -45,18 +45,21 @@ public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosa
      * Referencja do klasy-rodzica Informer, która przekazuje klasie SMSProcessor wiadomości do
      * wysłania i przetwarza odbierane wiadomości
      */
-    public SMSProcessor(IpHosaUIManager aHosaUIManager, Sample aParent) {
+    public SMSProcessor(IpHosaUIManager aHosaUIManager, Application aParent) {
         itsHosaUIManager = aHosaUIManager;
         this.parent = parent;
-        this.substribers = HashMultimap.create();
+        this.subsribers = HashMultimap.create();
         notifySubscribers = new TimerTask() {
             @Override
             public void run() {
-                for (Subscriber receiver : substribers.get("2222")) {
+                for (Subscriber receiver : subsribers.get("2221")) {
                     double rand = new Random().nextDouble();
-                    receiver.setFuel(receiver.getFuel()-rand);
-                    sendSMS("2222", receiver.getNumber(), "Wiadomosc do subskrybenta " + receiver.getNumber()
-                            + ".Stan paliwa: " + receiver.getFuel() + " litry/litra.");
+                    receiver.setActualFuel(receiver.getStartFuel()-rand);
+                    sendSMS("2221", receiver.getNumber(), "Wiadomosc do subskrybenta " + receiver.getNumber()
+                            + ". Stan paliwa: " + receiver.getActualFuel() + " litry/litra.");
+                }
+                for (Subscriber receiver : subsribers.get("2222")) {
+                    //todo wysylanie powiadomien z numeru 2222 na temat przekroczenia maksymalnej predkosci
                 }
             }
         };
@@ -149,52 +152,78 @@ public class SMSProcessor extends IpAppHosaUIManagerAdapter implements IpAppHosa
         return null;
     }
 
-    //todo ogarnia obsluge wiadomosci kierowcow do bramek
     public void subscribersManagment(String sender, String receiver, String messageContent) {
         String reply = "";
-        if (receiver.equals("1111")) { //todo kierowca wyslal sms na bramke 1111 odpowiedzialna za zarzadzanie flota
-            Subscriber subscriber = findSubsciber("1111",sender); //todo szukanie subskrypcji kierowcy na bramce 1111
-            //todo wejdzie jesli wiadomosc o tresci start i subskrypcji jeszcze nie ma
-            if (messageContent.equals("start") &&  subscriber==null) {
-                reply = "Dodano pojazd do floty.";
-                substribers.put(receiver, new Subscriber(sender)); //todo dodanie kierowcy do floty (subskrypcja na 1111)
-            }
-            //todo wejdzie jesli wiadomosc o tresci stop i subskrypcja istnieje
-            else if (messageContent.equals("stop") && subscriber!=null) {
-                reply = "Usunieto pojazd z floty.";
-                for (String g : substribers.keySet()) {
-                    substribers.remove(g,subscriber); //todo wywalenie kierowcy z floty (z subskrypcji na 1111)
-                }
-            }
+        if (receiver.equals("1111")) {
+            reply = fleetMembershipManagment(sender,receiver,messageContent);
         }
-        else if (receiver.equals("2222")) { //todo kierowca wyslal sms na bramke 2222 odpowiedzialna za okresowy raporty o paliwie
-            Subscriber fleetMember = findSubsciber("1111",sender); //todo szukanie subskrypcji kierowcy na bramce 1111
-            Subscriber fuelSubscriber = findSubsciber("2222",sender); //todo szukanie subskrypcji kierowcy na bramce 2222
-            //todo wejdzie jesli wiadomosc o tresci start, kierowca jest we flocie ale nie subskrybuje infa o paliwie
-            if (messageContent.equals("start") && fleetMember!=null && fuelSubscriber==null) {
-                reply = "Raporty na temat stanu paliwa beda otrzymywane raz na " + subscriptionInterval/1000 + " sekund.";
-                substribers.put(receiver, fleetMember); //todo dodanie kierowcy do subskrypcji infa o paliwie (na 2222)
-            }
-            //todo wejdzie jesli wiadomosci o tresci stop, kierowca subskrybuje info o paliwie. warunek o czlonkowstwie
-            //todo zbedny bo napewno jest we flocie
-            else if (messageContent.equals("stop") && fuelSubscriber!=null) {
-                reply = "Raporty na temat stanu paliwa zostaly anulowane.";
-                substribers.remove(receiver,fuelSubscriber); //todo wywalanie kierowcy z subskrypcji o stanie paliwa
-            }
+        else if (receiver.equals("2221") || receiver.equals("2222")) {
+            reply = alarmManagment(sender,receiver,messageContent);
         }
-        if (!reply.equals("")) { //todo jesli przygotowalismy jakas wiadomosc zrotna
-            this.sendSMS(receiver,sender,reply); //todo wyslanie wiadomosci zwrotnej
+        //todo else dla pozostalych uslug
+        if (!reply.equals("")) {
+            this.sendSMS(receiver,sender,reply);
         }
     }
 
-    //todo szuka subskrypcji kierowcy o numerze "subscriber" na bramce "gate"
     private Subscriber findSubsciber(String gate, String subscriber) {
-        for (Subscriber r : substribers.get(gate)) {
+        for (Subscriber r : subsribers.get(gate)) {
             if (r.getNumber().equals(subscriber)) {
                 return r;
             }
         }
         return null;
+    }
+
+    private String fleetMembershipManagment(String sender, String receiver, String messageContent) {
+        String reply = "";
+        Subscriber subscriber = findSubsciber("1111",sender);
+        if (messageContent.equals("start") &&  subscriber==null) {
+            reply = "Dodano pojazd do floty.";
+            subsribers.put(receiver, new Subscriber(sender));
+        }
+        else if (messageContent.equals("stop") && subscriber!=null) {
+            reply = "Usunieto pojazd z floty.";
+            for (String g : subsribers.keySet()) {
+                subsribers.remove(g,subscriber);
+            }
+        }
+        return reply;
+    }
+
+    private String alarmManagment(String sender, String receiver, String messageContent) {
+        String reply = "";
+        Subscriber fleetMember = findSubsciber("1111",sender);
+        Subscriber alarmSubscriber = findSubsciber(receiver,sender);
+        if (messageContent.equals("start") && fleetMember!=null && alarmSubscriber==null) {
+            if (receiver.equals("2221")) {
+                reply = "Alarmy na temat stanu paliwa beda otrzymywane raz na " + subscriptionInterval/1000 + " sekund.";
+            }
+            else if (receiver.equals("2222")) {
+                reply = "Alarm zostanie otrzymany w wypadku przekroczenia predkosci.";
+            }
+            subsribers.put(receiver, fleetMember);
+        }
+        else if (messageContent.equals("stop") && alarmSubscriber!=null) {
+            if (receiver.equals("2221")) {
+                reply = "Alarm na temat stanu paliwa zostaly anulowane.";
+            }
+            else if (receiver.equals("2222")) {
+                reply = "Alarmowanie stanu predkosci zostalo anulowane.";
+            }
+            subsribers.remove(receiver,alarmSubscriber);
+        }
+        return reply;
+    }
+
+    private String historyManagment(String sender, String receiver, String messageContent) {
+        //todo obsluga historii tras
+        return "";
+    }
+
+    private String reportManagment(String sender, String receiver, String messageContent) {
+        //todo obsluga tworzenia raportow
+        return "";
     }
 
     /**

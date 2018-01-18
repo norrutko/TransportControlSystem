@@ -6,7 +6,7 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import javax.swing.AbstractAction;
 public class Main {
-    private Sample sample;
+    private Application application;
     public static void main(String[] args) throws Exception {
         new Main();
     }
@@ -17,7 +17,7 @@ public class Main {
                 start();
             }
         });
-        sample = new Sample(gui);
+        application = new Application(gui);
         gui.addButton(new AbstractAction("Stop") {
             public void actionPerformed(ActionEvent e) {
                 stop();
@@ -32,14 +32,14 @@ public class Main {
     }
     public void start() {
         try {
-            sample.start();
+            application.start();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     public void stop() {
         try {
-            sample.stop();
+            application.stop();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
